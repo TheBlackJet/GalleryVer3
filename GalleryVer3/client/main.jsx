@@ -6,12 +6,23 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './components/App.jsx';
 
-const store = createStore(rootReducer);
+import { Images } from '../import/api/images.js';
 
+
+const initialState = { 
+	 carouselState: {display_carousel_status:'SHOW', images:Images.find({}).fetch()}
+};
+
+
+const store = createStore(rootReducer,initialState, window.devToolsExtension && window.devToolsExtension());
 
 
 
 Meteor.startup(() => {
+
+
+
+
   render(
 	  <Provider store={store}>
 	  		<App />
@@ -19,3 +30,5 @@ Meteor.startup(() => {
 
 	  document.getElementById('root'));
 });
+
+
