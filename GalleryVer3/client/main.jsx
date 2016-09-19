@@ -20,15 +20,24 @@ const store = createStore(rootReducer,initialState, window.devToolsExtension && 
 
 Meteor.startup(() => {
 
-
-
-
+  $(function(){
   render(
 	  <Provider store={store}>
 	  		<App />
 	  </Provider>,
 
-	  document.getElementById('root'));
-});
+	  document.getElementById('root')
+
+	  )
+
+	  
+  })
+
+})
+
+
+
+
+    
 
 
