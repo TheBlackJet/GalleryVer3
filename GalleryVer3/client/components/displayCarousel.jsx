@@ -28,7 +28,9 @@ class displayCarousel extends Component {
 	
 	render(){
 
-		if (this.props.display_status == 'HIDE'){
+		
+
+		if (this.props.display_status == 'HIDE' || this.props.images.length == 0 ){
 
 			return (<div></div>);	
 
