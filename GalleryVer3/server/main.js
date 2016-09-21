@@ -9,4 +9,14 @@ Meteor.startup(() => {
   Images.insert({path : 'Desert.jpg', status : ''});
   Images.insert({path : 'Hydrangeas.jpg', status : ''});
   Images.insert({path : 'Jellyfish.jpg', status : ''});
+
+  console.log(Images.find({}).fetch());
+
+  Meteor.publish('Images',
+      function (){
+
+          return Images.find({}).fetch();
+      }
+  );
+
 });

@@ -16,7 +16,11 @@ const initialState = {
 
 const store = createStore(rootReducer,initialState, window.devToolsExtension && window.devToolsExtension());
 
+const handle = Meteor.subscribe('Images');
 
+const isReady = handle.ready();
+
+console.log(isReady);
 
 Meteor.startup(() => {
 
